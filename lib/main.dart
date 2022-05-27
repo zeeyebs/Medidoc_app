@@ -1,4 +1,4 @@
-import 'package:doctor_app/ui/screens/HomePage.dart';
+import 'package:doctor_app/ui/screens/home.dart';
 import 'package:doctor_app/ui/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 

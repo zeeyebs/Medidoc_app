@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/home/tello/src/flutter"
-export "FLUTTER_APPLICATION_PATH=/home/tello/Documents/codes/codes/mobile applications/flutter/medic_doc"
+export "FLUTTER_APPLICATION_PATH=/home/tello/Documents/codes/codes/mobile applications/flutter/medi_doc"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"

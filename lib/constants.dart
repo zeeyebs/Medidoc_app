@@ -40,7 +40,7 @@ const primaryTextColor = Color(0xFF758086);
 const secondaryTextColor = Color(0xFF758086);
 const headerTextColor = Color(0xFF151E25);
 const subHeaderTextColor = Color(0xFF404D55);
-
+const mainTextColor = Color(0xFF151E25);
 const hintTextColor = Color(0xFF636363);
 const activeTabColor = Color(0xFFFFFFFF);
 const inactiveTabColor = Color(0xFF636363);

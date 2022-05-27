@@ -8,7 +8,7 @@ const TextStyle primaryTextStyle = TextStyle(
     // fontWeight: FontWeight.w300,
     color: primaryTextColor);
 
-TextStyle buttonTextStyle = TextStyle(
+TextStyle buttonTextStyle = const TextStyle(
   fontFamily: "NunitoSans",
   fontSize: buttonLG,
   fontWeight: FontWeight.w700,
@@ -56,3 +56,8 @@ const TextStyle textfieldHeaderTextStyle = TextStyle(
   fontWeight: FontWeight.w600,
   color: primaryColor2,
 );
+const TextStyle fieldHeaderTextStyle = TextStyle(
+    fontFamily: fontName,
+    fontSize: headline5,
+    fontWeight: FontWeight.w600,
+    color: mainTextColor);
