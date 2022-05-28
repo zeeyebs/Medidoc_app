@@ -1,13 +1,19 @@
-import 'package:doctor_app/screens/welcome/welcome_screen.dart';
+import 'package:doctor_app/ui/screens/authentication/sign_in_screen.dart';
+import 'package:doctor_app/ui/screens/authentication/sign_up_screen.dart';
+import 'package:doctor_app/ui/screens/home.dart';
+import 'package:doctor_app/ui/screens/navigation/main_navigator.dart';
+import 'package:doctor_app/ui/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +26,7 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: TextButton.styleFrom(
             backgroundColor: primaryColor,
-            padding: EdgeInsets.all(defaultPadding),
+            padding: const EdgeInsets.all(defaultPadding),
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
@@ -29,7 +35,13 @@ class MyApp extends StatelessWidget {
           focusedBorder: textFieldBorder,
         ),
       ),
-      home: WelcomeScreen(),
+      home: const WelcomeScreen(),
+      routes: {
+        HomeScreen.id: (context) => const HomeScreen(),
+        MainNavigation.id: (context) => const MainNavigation(),
+        SignInScreen.id: (context) => SignInScreen(),
+        SignUpScreen.id: (context) => SignUpScreen(),
+      },
     );
   }
 }
