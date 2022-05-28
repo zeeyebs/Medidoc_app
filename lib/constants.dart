@@ -124,3 +124,77 @@ InputDecoration authTextFieldInputDecoration = InputDecoration(
     borderSide: const BorderSide(color: Colors.black),
   ),
 );
+//
+// class AvailableDoctorsCarouselCard extends StatelessWidget {
+//   const AvailableDoctorsCarouselCard({Key? key, final EdgeInsetsGeometry? margin})
+//       : _margin = margin,
+//         super(key: key);
+//   final EdgeInsetsGeometry? _margin;
+//   @override
+//   Widget build(BuildContext context) {
+//     return Expanded(
+//       child: Container(
+//         width: 200,
+//         margin: _margin,
+//         child: Material(
+//           elevation: 2,
+//           borderRadius: BorderRadius.circular(20),
+//           color: primaryColor2,
+//           child: Container(
+//               margin: const EdgeInsets.only(left: 18.0),
+//               padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+//               decoration: BoxDecoration(
+//                   borderRadius: BorderRadius.circular(20), color: primaryColor2),
+//               child: Stack(
+//                 alignment: AlignmentDirectional.centerEnd,
+//                 children: [
+//                   Image.asset(
+//                     "assets/images/Kwame_Khan.png",
+//                     height: 120,
+//                   ),
+//                   Positioned(
+//                     right: 10.0,
+//                     top: 10,
+//                     left: 0.0,
+//                     child: Column(
+//                       crossAxisAlignment: CrossAxisAlignment.start,
+//                       // mainAxisAlignment: MainAxisAlignment.center,
+//                       children: [
+//                         Text(
+//                           "Dr. Zennita Yeboah",
+//                           style: inputTextStyle.copyWith(fontWeight: FontWeight.w700),
+//                         ),
+//                         const Text(
+//                           "Medical Specialist",
+//                           style: tagTextStyle,
+//                         ),
+//                         RatingBar.builder(
+//                           itemSize: 10,
+//                           initialRating: 4.5,
+//                           minRating: 0,
+//                           direction: Axis.horizontal,
+//                           allowHalfRating: true,
+//                           itemCount: 5,
+//                           itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+//                           itemBuilder: (BuildContext context, int index) => const Icon(
+//                             Icons.star,
+//                             color: Colors.amber,
+//                           ),
+//                           onRatingUpdate: (rating) {},
+//                         ),
+//                         const Gap(10),
+//                         const Text("Experience"),
+//                         const Text("8 Years"),
+//                         const Gap(10),
+//                         const Text("Patients"),
+//                         const Text("307")
+//                       ],
+//                     ),
+//                   ),
+//                 ],
+//               )),
+//         ),
+//       ),
+//     );
+//   }
+// }

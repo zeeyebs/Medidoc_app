@@ -43,7 +43,10 @@ class _CustomButtonState extends State<CustomButton> {
       child: Material(
         type: MaterialType.canvas,
         color: widget._color,
-        borderRadius: BorderRadius.circular(widget._radius),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(widget._radius),
+          side: const BorderSide(color: Color(0xFF6CD8D1)),
+        ),
         child: MaterialButton(
           onPressed: widget._onPressed,
           child: widget.customLabel ??

@@ -1,12 +1,15 @@
 import 'package:doctor_app/constants.dart';
+import 'package:doctor_app/text_style.dart';
 import 'package:doctor_app/ui/screens/authentication/components/sign_up_form.dart';
 import 'package:doctor_app/ui/screens/authentication/sign_in_screen.dart';
+import 'package:doctor_app/ui/screens/navigation/main_navigator.dart';
+import 'package:doctor_app/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
 class SignUpScreen extends StatelessWidget {
-  // It's time to validat the text field
+  static const String id = "sign up screen route";
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -15,12 +18,11 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
-        fit: StackFit.expand,
         children: [
           SvgPicture.asset(
             "assets/icons/Sign_Up_bg.svg",
-            height: MediaQuery.of(context).size.height,
-            // Now it takes 100% of our height
+            width: double.infinity,
+            fit: BoxFit.fill,
           ),
           Center(
             child: SafeArea(
@@ -36,35 +38,28 @@ class SignUpScreen extends StatelessWidget {
                           .headline5!
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
-                    Row(
-                      children: [
-                        Text("Already have an account?"),
-                        TextButton(
-                          onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SignInScreen(),
-                              )),
-                          child: Text(
-                            "Sign In!",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ],
-                    ),
+                    RichText(
+                        text: TextSpan(
+                            text: "Already have an account?",
+                            style: primaryTextStyle,
+                            children: [
+                          TextSpan(
+                              text: " Sign In!",
+                              style: primaryTextStyle.copyWith(color: primaryColor1))
+                        ])),
                     const SizedBox(height: defaultPadding * 2),
                     SignUpForm(formKey: _formKey),
                     const SizedBox(height: defaultPadding * 2),
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            _formKey.currentState!.save();
-                          }
-                        },
-                        child: Text("Sign Up"),
-                      ),
+                    CustomButton(
+                      label: "Sign Up",
+                      color: primaryColor,
+                      width: 500,
+                      height: 55,
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, MainNavigation.id);
+                      },
+                      radius: 10,
+                      textColor: primaryColor2,
                     ),
                   ],
                 ),

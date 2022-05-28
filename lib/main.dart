@@ -1,4 +1,7 @@
+import 'package:doctor_app/ui/screens/authentication/sign_in_screen.dart';
+import 'package:doctor_app/ui/screens/authentication/sign_up_screen.dart';
 import 'package:doctor_app/ui/screens/home.dart';
+import 'package:doctor_app/ui/screens/navigation/main_navigator.dart';
 import 'package:doctor_app/ui/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +36,12 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const WelcomeScreen(),
-      routes: {HomeScreen.id: (context) => const HomeScreen()},
+      routes: {
+        HomeScreen.id: (context) => const HomeScreen(),
+        MainNavigation.id: (context) => const MainNavigation(),
+        SignInScreen.id: (context) => SignInScreen(),
+        SignUpScreen.id: (context) => SignUpScreen(),
+      },
     );
   }
 }

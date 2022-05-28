@@ -15,27 +15,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
-  int _currentRowIndex = 0;
-
-  List<T> map<T>(List list, Function handler) {
-    List<T> result = [];
-    for (var i = 0; i < list.length; i++) {
-      result.add(handler(i, list[i]));
-    }
-    return result;
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-      decoration: BoxDecoration(color: primaryColor2
-          // gradient: LinearGradient(
-          //     colors: [Colors.white, Colors.grey.shade400],
-          //     begin: Alignment.topCenter,
-          //     end: Alignment.bottomCenter),
-          ),
+    return Container(
+      decoration: const BoxDecoration(color: Colors.white),
       child: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
@@ -62,25 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              const CustomCarousel(), // CarouselSlider(
-              //   options: CarouselOptions(
-              //     height: 200.0,
-              //     viewportFraction: 0.9,
-              //     onPageChanged: (index, reason) {
-              //       setState(() {
-              //         _currentIndex = index + 19;
-              //         _currentRowIndex = index;
-              //       });
-              //     },
-              //   ),
-              //   items: cardList.map((card) {
-              //     return Builder(builder: (BuildContext context) {
-              //       return Container(
-              //         child: card,
-              //       );
-              //     });
-              //   }).toList(),
-              // ),
+              const CustomCarousel(),
               // Padding(
               //   padding: const EdgeInsets.all(18.0),
               //   child: Row(
@@ -136,6 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+
               const AvailableDoctorCarousel(),
               const SizedBox(
                 height: 20,
@@ -162,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-    ));
+    );
   }
 
   SizedBox categoryContainer(String imgName, String title) {

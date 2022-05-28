@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:doctor_app/ui/widgets/specialist_carousel_card.dart';
+import 'package:doctor_app/ui/widgets/custom_carousel_card.dart';
 import 'package:flutter/material.dart';
 
 class CustomCarousel extends StatefulWidget {
@@ -60,7 +60,7 @@ class _AvailableDoctorCarouselState extends State<AvailableDoctorCarousel> {
   final List<Widget>? images = [
     const AvailableDoctorsCarouselCard(),
     const AvailableDoctorsCarouselCard(),
-    const AvailableDoctorsCarouselCard(),
+
     const AvailableDoctorsCarouselCard(),
     const AvailableDoctorsCarouselCard(),
     const AvailableDoctorsCarouselCard(),

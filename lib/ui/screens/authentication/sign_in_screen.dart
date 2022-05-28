@@ -1,5 +1,6 @@
 import 'package:doctor_app/ui/screens/home.dart';
 import 'package:doctor_app/ui/screens/authentication/sign_up_screen.dart';
+import 'package:doctor_app/ui/screens/navigation/main_navigator.dart';
 import 'package:doctor_app/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -9,7 +10,7 @@ import '../../../constants.dart';
 import 'components/sign_in_form.dart';
 
 class SignInScreen extends StatelessWidget {
-  // It's time to validate the text field
+  static const String id = "sign in screen route";
   final _formKey = GlobalKey<FormState>();
 
   SignInScreen({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class SignInScreen extends StatelessWidget {
         children: [
           SvgPicture.asset(
             "assets/icons/Sign_Up_bg.svg", height: double.infinity,
-            width: double.infinity,
+            width: double.infinity, fit: BoxFit.fill,
             // Now it takes 100% of our height
           ),
           SafeArea(
@@ -62,15 +63,16 @@ class SignInScreen extends StatelessWidget {
                   SignInForm(formKey: _formKey),
                   const SizedBox(height: defaultPadding * 2),
                   CustomButton(
-                      label: "Sign In",
-                      color: primaryColor,
-                      width: 300,
-                      height: 55,
-                      onPressed: () {
-                        Navigator.popAndPushNamed(context, HomeScreen.id);
-                      },
-                      radius: 10,
-                      textColor: textColor)
+                    label: "Sign In",
+                    color: primaryColor,
+                    width: 500,
+                    height: 55,
+                    onPressed: () {
+                      Navigator.popAndPushNamed(context, MainNavigation.id);
+                    },
+                    radius: 10,
+                    textColor: textColor,
+                  ),
                 ],
               ),
             ),

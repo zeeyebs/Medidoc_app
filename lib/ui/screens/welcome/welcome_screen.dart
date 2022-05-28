@@ -1,6 +1,7 @@
 import 'package:doctor_app/constants.dart';
 import 'package:doctor_app/ui/screens/authentication/sign_in_screen.dart';
 import 'package:doctor_app/ui/screens/authentication/sign_up_screen.dart';
+import 'package:doctor_app/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -22,48 +23,38 @@ class WelcomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
               child: Column(
                 children: [
-                  Spacer(),
+                  const Spacer(
+                    flex: 7,
+                  ),
                   SvgPicture.asset(
                     "assets/icons/logo-2.svg",
                   ),
-                  Spacer(),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignUpScreen(),
-                        ),
-                      ),
-                      style: TextButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 225, 157, 22),
-                      ),
-                      child: Text("Sign Up"),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: defaultPadding),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignInScreen(),
-                            )),
-                        style: TextButton.styleFrom(
-                          backgroundColor: Color(0xFF6CD8D1),
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            side: BorderSide(color: Color(0xFF6CD8D1)),
-                          ),
-                        ),
-                        child: Text("Sign In"),
-                      ),
-                    ),
-                  ),
+                  const Spacer(flex: 5),
+                  CustomButton(
+                      label: "Sign In",
+                      color: const Color(0xFF6CD8D1),
+                      width: 500,
+                      height: 50,
+                      onPressed: () {
+                        Navigator.pushNamed(context, SignInScreen.id);
+                      },
+                      radius: 10,
+                      textColor: primaryColor2),
                   const SizedBox(height: defaultPadding),
+                  CustomButton(
+                      label: "Sign Up",
+                      color: Colors.transparent,
+                      width: 500,
+                      height: 50,
+                      onPressed: () {
+                        Navigator.pushNamed(context, SignUpScreen.id);
+                      },
+                      radius: 10,
+                      textColor: primaryColor2),
+                  const SizedBox(height: defaultPadding),
+                  const Spacer(
+                    flex: 1,
+                  ),
                 ],
               ),
             ),
