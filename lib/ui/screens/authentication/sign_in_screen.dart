@@ -17,19 +17,21 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // But still same problem, let's fixed it
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       body: Stack(
         fit: StackFit.expand,
         children: [
           SvgPicture.asset(
-            "assets/icons/Sign_Up_bg.svg", height: double.infinity,
-            width: double.infinity, fit: BoxFit.fill,
-            // Now it takes 100% of our height
+            "assets/icons/Sign_Up_bg.svg",
+            height: double.infinity,
+            width: double.infinity,
+            fit: BoxFit.fill,
           ),
           SafeArea(
             child: SingleChildScrollView(
+              physics:
+                  const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

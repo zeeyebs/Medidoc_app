@@ -1,9 +1,11 @@
 import 'package:doctor_app/constants.dart';
+import 'package:doctor_app/models/doctors.dart';
 import 'package:doctor_app/text_style.dart';
 import 'package:doctor_app/ui/widgets/active_tab_indicator.dart';
 import 'package:doctor_app/ui/widgets/custom_carousel_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class DoctorsScreen extends StatefulWidget {
   const DoctorsScreen({Key? key}) : super(key: key);
@@ -27,18 +29,25 @@ class _DoctorsScreenState extends State<DoctorsScreen>
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      shrinkWrap: true,
       physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
       slivers: [
+        const SliverToBoxAdapter(
+          child: SafeArea(child: SizedBox()),
+        ),
         SliverAppBar(
+          elevation: 0.1,
           floating: true,
-          toolbarHeight: 70,
-          backgroundColor: Colors.transparent,
+          pinned: true,
+          // expandedHeight: 120,
+          backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
-          title: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 18.0),
-            child: Column(
+          flexibleSpace: FlexibleSpaceBar(
+            collapseMode: CollapseMode.parallax,
+            expandedTitleScale: 1,
+            titlePadding: const EdgeInsets.all(24),
+            title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
                   "Available",
@@ -47,9 +56,9 @@ class _DoctorsScreenState extends State<DoctorsScreen>
                 Text(
                   "Specialist",
                   style: headerTextStyle.copyWith(
-                    fontSize: headline2 + 3,
+                    fontSize: headline1,
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -71,89 +80,95 @@ class _DoctorsScreenState extends State<DoctorsScreen>
               ),
             ),
           ],
-          bottom: TabBar(
-            onTap: (int index) {
-              setState(() {
-                _currentTabIndex = index;
-              });
-            },
-            padding: EdgeInsets.zero,
-            labelPadding: EdgeInsets.zero,
-            physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-            controller: _tabController,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicatorWeight: 0.1,
-            tabs: [
-              _currentTabIndex == 0
-                  ? const ActiveBottomNavBarTab(
-                      label: "all",
-                      margin: EdgeInsets.only(
-                        left: 18.0,
+          bottom: AppBar(
+            automaticallyImplyLeading: false,
+            backgroundColor: Colors.white,
+            elevation: 0,
+            title: TabBar(
+              onTap: (int index) {
+                setState(() {
+                  _currentTabIndex = index;
+                });
+              },
+              padding: EdgeInsets.zero,
+              labelPadding: EdgeInsets.zero,
+              physics:
+                  const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+              controller: _tabController,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicatorWeight: 0.1,
+              tabs: [
+                _currentTabIndex == 0
+                    ? const ActiveBottomNavBarTab(
+                        label: "all",
+                        margin: EdgeInsets.only(
+                          left: 18.0,
+                        ),
+                      )
+                    : Container(
+                        margin: const EdgeInsets.only(left: 18.0),
+                        child: const Text(
+                          "All",
+                          style: fieldHeaderTextStyle,
+                        ),
                       ),
-                    )
-                  : Container(
-                      margin: const EdgeInsets.only(left: 18.0),
-                      child: const Text(
-                        "All",
-                        style: fieldHeaderTextStyle,
+                _currentTabIndex == 1
+                    ? const ActiveBottomNavBarTab(
+                        label: "Pediatrician",
+                        margin: EdgeInsets.only(
+                          left: 18.0,
+                        ),
+                      )
+                    : Container(
+                        margin: const EdgeInsets.only(left: 18.0),
+                        child: const Text(
+                          "Pediatrician",
+                          style: fieldHeaderTextStyle,
+                        ),
                       ),
-                    ),
-              _currentTabIndex == 1
-                  ? const ActiveBottomNavBarTab(
-                      label: "Pediatrician",
-                      margin: EdgeInsets.only(
-                        left: 18.0,
+                _currentTabIndex == 2
+                    ? const ActiveBottomNavBarTab(
+                        label: "Neurosurgeon",
+                        margin: EdgeInsets.only(
+                          left: 18.0,
+                        ),
+                      )
+                    : Container(
+                        margin: const EdgeInsets.only(left: 18.0),
+                        child: const Text(
+                          "Neurosurgeon",
+                          style: fieldHeaderTextStyle,
+                        ),
                       ),
-                    )
-                  : Container(
-                      margin: const EdgeInsets.only(left: 18.0),
-                      child: const Text(
-                        "Pediatrician",
-                        style: fieldHeaderTextStyle,
+                _currentTabIndex == 3
+                    ? const ActiveBottomNavBarTab(
+                        label: "Cardiologist",
+                        margin: EdgeInsets.only(
+                          left: 18.0,
+                        ),
+                      )
+                    : Container(
+                        margin: const EdgeInsets.only(left: 18.0),
+                        child: const Text(
+                          "Cardiologist",
+                          style: fieldHeaderTextStyle,
+                        ),
                       ),
-                    ),
-              _currentTabIndex == 2
-                  ? const ActiveBottomNavBarTab(
-                      label: "Neurosurgeon",
-                      margin: EdgeInsets.only(
-                        left: 18.0,
+                _currentTabIndex == 4
+                    ? const ActiveBottomNavBarTab(
+                        label: "Psychologist",
+                        margin: EdgeInsets.only(left: 18.0, right: 18.0),
+                      )
+                    : Container(
+                        margin: const EdgeInsets.only(right: 18.0, left: 18.0),
+                        child: const Text(
+                          "Psychologist",
+                          style: fieldHeaderTextStyle,
+                        ),
                       ),
-                    )
-                  : Container(
-                      margin: const EdgeInsets.only(left: 18.0),
-                      child: const Text(
-                        "Neurosurgeon",
-                        style: fieldHeaderTextStyle,
-                      ),
-                    ),
-              _currentTabIndex == 3
-                  ? const ActiveBottomNavBarTab(
-                      label: "Cardiologist",
-                      margin: EdgeInsets.only(
-                        left: 18.0,
-                      ),
-                    )
-                  : Container(
-                      margin: const EdgeInsets.only(left: 18.0),
-                      child: const Text(
-                        "Cardiologist",
-                        style: fieldHeaderTextStyle,
-                      ),
-                    ),
-              _currentTabIndex == 4
-                  ? const ActiveBottomNavBarTab(
-                      label: "Psychologist",
-                      margin: EdgeInsets.only(left: 18.0, right: 18.0),
-                    )
-                  : Container(
-                      margin: const EdgeInsets.only(right: 18.0, left: 18.0),
-                      child: const Text(
-                        "Psychologist",
-                        style: fieldHeaderTextStyle,
-                      ),
-                    ),
-            ],
-            isScrollable: true,
+              ],
+              isScrollable: true,
+            ),
           ),
         ),
         SliverPadding(
@@ -163,13 +178,15 @@ class _DoctorsScreenState extends State<DoctorsScreen>
               maxCrossAxisExtent: 300.0,
               mainAxisSpacing: 10.0,
               crossAxisSpacing: 10.0,
-              childAspectRatio: 1.0,
+              childAspectRatio: 0.85,
             ),
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return const DoctorsPageCard();
+                return DoctorsPageCard(
+                  index: index,
+                );
               },
-              childCount: 20,
+              childCount: doctorsList.length,
             ),
           ),
         )

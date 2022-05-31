@@ -19,11 +19,6 @@ class _CustomCarouselState extends State<CustomCarousel> {
     const SpecialistCarouselCard(),
     const SpecialistCarouselCard(),
     const SpecialistCarouselCard(),
-
-    // 'assets/images/search_doc_1.png',
-    // 'assets/images/search_doc_2.png',
-    // 'assets/images/search_doc_3.png',
-    // 'assets/images/search_doc_4.png',
   ];
 
   @override
@@ -60,16 +55,10 @@ class _AvailableDoctorCarouselState extends State<AvailableDoctorCarousel> {
   final List<Widget>? images = [
     const AvailableDoctorsCarouselCard(),
     const AvailableDoctorsCarouselCard(),
-
     const AvailableDoctorsCarouselCard(),
     const AvailableDoctorsCarouselCard(),
     const AvailableDoctorsCarouselCard(),
     const AvailableDoctorsCarouselCard(),
-
-    // 'assets/images/search_doc_1.png',
-    // 'assets/images/search_doc_2.png',
-    // 'assets/images/search_doc_3.png',
-    // 'assets/images/search_doc_4.png',
   ];
 
   @override
