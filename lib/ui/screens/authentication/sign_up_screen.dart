@@ -34,7 +34,7 @@ class SignUpScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Gap(50),
+                  const Gap(60),
                   Text(
                     "Create Account",
                     style: Theme.of(context)
