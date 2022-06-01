@@ -1,7 +1,10 @@
+import 'package:doctor_app/text_style.dart';
 import 'package:doctor_app/ui/screens/authentication/sign_in_screen.dart';
 import 'package:doctor_app/ui/screens/authentication/sign_up_screen.dart';
+import 'package:doctor_app/ui/screens/doctors/doctor_profile.dart';
 import 'package:doctor_app/ui/screens/home.dart';
 import 'package:doctor_app/ui/screens/navigation/main_navigator.dart';
+import 'package:doctor_app/ui/screens/profile/settings.dart';
 import 'package:doctor_app/ui/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +21,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'MediDoc- Doctor Consultation App',
+      title: 'MediDoc',
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          iconTheme: const IconThemeData(color: headerTextColor),
+          titleTextStyle: headerTextStyle.copyWith(fontSize: headline3),
+          actionsIconTheme: const IconThemeData(color: headerTextColor),
+        ),
         primarySwatch: Colors.blue,
         primaryColor: primaryColor,
         textTheme: Theme.of(context).textTheme.apply(displayColor: textColor),
@@ -41,6 +49,8 @@ class MyApp extends StatelessWidget {
         MainNavigation.id: (context) => const MainNavigation(),
         SignInScreen.id: (context) => SignInScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
+        DoctorProfile.id: (context) => const DoctorProfile(),
+        Settings.id: (context) => const Settings()
       },
     );
   }
