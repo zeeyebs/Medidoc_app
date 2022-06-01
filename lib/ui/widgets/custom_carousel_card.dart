@@ -12,7 +12,8 @@ class SpecialistCarouselCard extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return ClipRect(
+    return GestureDetector(
+      onTap: () {},
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 18.0, horizontal: 18.0),
         width: double.infinity,
@@ -39,11 +40,11 @@ class SpecialistCarouselCard extends StatelessWidget {
                   ),
                   Text(
                     "Medicine & Cadio Specialist",
-                    style: tagTextStyle.copyWith(color: discountcardColor),
+                    style: tagTextStyle.copyWith(color: discountCardColor),
                   ),
                   Text(
                     "Good Health Clinic",
-                    style: tagTextStyle.copyWith(color: discountcardColor),
+                    style: tagTextStyle.copyWith(color: discountCardColor),
                   ),
                 ],
               ),

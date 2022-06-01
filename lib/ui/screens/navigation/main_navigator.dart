@@ -2,6 +2,8 @@ import 'package:doctor_app/constants.dart';
 import 'package:doctor_app/text_style.dart';
 import 'package:doctor_app/ui/screens/doctors/doctors.dart';
 import 'package:doctor_app/ui/screens/home.dart';
+import 'package:doctor_app/ui/screens/notification/notifications.dart';
+import 'package:doctor_app/ui/screens/profile/user_profile.dart';
 import 'package:doctor_app/ui/widgets/active_tab_indicator.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +25,8 @@ class _MainNavigationState extends State<MainNavigation> {
   List<Widget> pageData = [
     const HomeScreen(),
     const DoctorsScreen(),
+    const Notifications(),
+    const UserProfile(),
   ];
 
   @override

@@ -20,9 +20,8 @@ class _DoctorsScreenState extends State<DoctorsScreen>
   final TextEditingController _searchController = TextEditingController();
   @override
   void initState() {
-    // TODO: implement initState
-    super.initState();
     _tabController = TabController(length: 5, vsync: this);
+    super.initState();
   }
 
   int _currentTabIndex = 0;

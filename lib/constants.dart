@@ -2,13 +2,6 @@ import 'package:doctor_app/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
-const primaryColor = Color(0xFF255ED6);
-const textColor = Color.fromARGB(255, 5, 5, 5);
-const backgroundColor = Color(0xFFE6EFF9);
-const redColor = Color(0xFFE85050);
-
-const defaultPadding = 16.0;
-
 OutlineInputBorder textFieldBorder = OutlineInputBorder(
   borderSide: BorderSide(
     color: primaryColor.withOpacity(0.1),
@@ -28,14 +21,17 @@ final passwordValidator = MultiValidator(
 );
 
 // Colors
+const primaryColor = Color(0xFF255ED6);
+const textColor = Color.fromARGB(255, 5, 5, 5);
+const backgroundColor = Color(0xFFE6EFF9);
+const redColor = Color(0xFFE85050);
 const primaryColor1 = Color(0xFF4FAFFB);
 const primaryColor2 = Color(0xFFF1F8FF);
-
 const secondaryColor1 = Color(0xFFFD5646);
 const secondaryColor2 = Color(0xFFFFEEEE);
 
 const cardBackgroundColor = Color(0xFFDDECFF);
-const discountcardColor = Color(0xFFE5E9EC);
+const discountCardColor = Color(0xFFE5E9EC);
 const primaryTextColor = Color(0xFF758086);
 const secondaryTextColor = Color(0xFF758086);
 const headerTextColor = Color(0xFF151E25);
@@ -51,6 +47,7 @@ const containerBackgroundColor = Color(0xFF101010);
 const favoritedIconColor = Color(0xFFFE4948);
 const defaultIconColor = Color(0xFF636363);
 const cartBoxColor = Color(0xFFcacaca);
+
 // Heading
 const double headline1 = 36;
 const double headline2 = 24;
@@ -58,6 +55,7 @@ const double headline3 = 20;
 const double headline4 = 18;
 const double headline5 = 16;
 const double headline6 = 14;
+
 //Text
 const double tag = 13;
 const double tab = 14;
@@ -75,6 +73,7 @@ const double paragraph4 = 12;
 const String fontName = "NunitoSans";
 
 // Dimensions
+const defaultPadding = 16.0;
 const double kSpacingNone = 0.0;
 const double kSpacingX2 = 2.0;
 const double kSpacingX4 = 4.0;
