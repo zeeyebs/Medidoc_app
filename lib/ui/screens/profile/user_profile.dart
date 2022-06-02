@@ -1,9 +1,8 @@
 import 'package:doctor_app/constants.dart';
 import 'package:doctor_app/text_style.dart';
+import 'package:doctor_app/ui/screens/authentication/sign_in_screen.dart';
 import 'package:doctor_app/ui/screens/profile/settings.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:gap/gap.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({Key? key}) : super(key: key);
@@ -64,7 +63,7 @@ class UserProfile extends StatelessWidget {
                       onTap: () async {
                         // await _firebaseAuth.signOut().then(
                         //       (value) =>
-                        //       Navigator.popAndPushNamed(context, AuthScreen.id),
+                        Navigator.popAndPushNamed(context, SignInScreen.id);
                         // );
                       },
                       leading: const Icon(
