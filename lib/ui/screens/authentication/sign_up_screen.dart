@@ -4,14 +4,16 @@ import 'package:doctor_app/ui/screens/authentication/components/sign_up_form.dar
 import 'package:doctor_app/ui/screens/authentication/sign_in_screen.dart';
 import 'package:doctor_app/ui/screens/navigation/main_navigator.dart';
 import 'package:doctor_app/ui/widgets/custom_button.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:gap/gap.dart';
 
 class SignUpScreen extends StatelessWidget {
   static const String id = "sign up screen route";
   final _formKey = GlobalKey<FormState>();
+
+  SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,14 +45,20 @@ class SignUpScreen extends StatelessWidget {
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   RichText(
-                      text: TextSpan(
-                          text: "Already have an account?",
-                          style: primaryTextStyle,
-                          children: [
+                    text: TextSpan(
+                      text: "Already have an account?",
+                      style: primaryTextStyle,
+                      children: [
                         TextSpan(
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.popAndPushNamed(context, SignInScreen.id);
+                              },
                             text: " Sign In!",
                             style: primaryTextStyle.copyWith(color: primaryColor1))
-                      ])),
+                      ],
+                    ),
+                  ),
                   const SizedBox(height: defaultPadding * 2),
                   SignUpForm(formKey: _formKey),
                   const SizedBox(height: defaultPadding * 2),

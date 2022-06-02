@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color bgColor = Color(0xffF9F9F9);
+final Color bgColor = Color.fromARGB(255, 241, 243, 247);
 const Color path1Color = Color(0xffE4E2FF);
 const Color getStartedColorStart = Color.fromARGB(255, 62, 230, 219);
 const Color getStartedColorEnd = Color(0xff00AABF);

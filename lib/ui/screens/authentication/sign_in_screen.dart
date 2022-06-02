@@ -1,7 +1,8 @@
-import 'package:doctor_app/ui/screens/home.dart';
+import 'package:doctor_app/text_style.dart';
 import 'package:doctor_app/ui/screens/authentication/sign_up_screen.dart';
 import 'package:doctor_app/ui/screens/navigation/main_navigator.dart';
 import 'package:doctor_app/ui/widgets/custom_button.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
@@ -44,22 +45,20 @@ class SignInScreen extends StatelessWidget {
                         .headline5!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
-                  Row(
-                    children: [
-                      const Text("Don't have an account?"),
-                      TextButton(
-                        onPressed: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SignUpScreen(),
-                          ),
-                        ),
-                        child: const Text(
-                          "Sign Up!",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ],
+                  RichText(
+                    text: TextSpan(
+                      text: "Don't have an account?",
+                      style: primaryTextStyle,
+                      children: [
+                        TextSpan(
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.popAndPushNamed(context, SignUpScreen.id);
+                              },
+                            text: " Sign Up!",
+                            style: primaryTextStyle.copyWith(color: primaryColor1))
+                      ],
+                    ),
                   ),
                   const SizedBox(height: defaultPadding * 2),
                   SignInForm(formKey: _formKey),
