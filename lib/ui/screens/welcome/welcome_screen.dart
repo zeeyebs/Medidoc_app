@@ -3,9 +3,9 @@ import 'package:doctor_app/ui/screens/authentication/sign_in_screen.dart';
 import 'package:doctor_app/ui/screens/authentication/sign_up_screen.dart';
 import 'package:doctor_app/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  static const String id = "welcome screen route";
   const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -31,7 +31,7 @@ class WelcomeScreen extends StatelessWidget {
                 width: 500,
                 height: 50,
                 onPressed: () {
-                  Navigator.pushNamed(context, SignInScreen.id);
+                  Navigator.popAndPushNamed(context, SignInScreen.id);
                 },
                 radius: 10,
                 textColor: primaryColor2),
@@ -43,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                 height: 50,
                 borderSideColor: primaryColor2,
                 onPressed: () {
-                  Navigator.pushNamed(context, SignUpScreen.id);
+                  Navigator.popAndPushNamed(context, SignUpScreen.id);
                 },
                 radius: 10,
                 textColor: primaryColor2),
