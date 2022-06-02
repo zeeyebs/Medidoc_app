@@ -5,6 +5,7 @@ import 'package:doctor_app/ui/screens/doctors/doctor_profile.dart';
 import 'package:doctor_app/ui/screens/home.dart';
 import 'package:doctor_app/ui/screens/navigation/main_navigator.dart';
 import 'package:doctor_app/ui/screens/profile/settings.dart';
+import 'package:doctor_app/ui/screens/welcome/splash.dart';
 import 'package:doctor_app/ui/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -43,8 +44,10 @@ class MyApp extends StatelessWidget {
           focusedBorder: textFieldBorder,
         ),
       ),
-      home: const WelcomeScreen(),
+      initialRoute: Splash.id,
       routes: {
+        Splash.id: (context) => const Splash(),
+        WelcomeScreen.id: (context) => const WelcomeScreen(),
         HomeScreen.id: (context) => const HomeScreen(),
         MainNavigation.id: (context) => const MainNavigation(),
         SignInScreen.id: (context) => SignInScreen(),
